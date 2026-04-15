@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FBA智能托管3.0</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <div class="filters">
+        <div class="field text-field keyword-filter">
+          <span class="field-label">策略名称搜索</span>
+          <input type="text" value="" placeholder="请输入策略名称搜索" />
+        </div>
+        <div class="field select-field">
+          <span class="field-label">状态</span>
+          <select>
+            <option>全部状态</option>
+            <option>启用</option>
+            <option>禁用</option>
+          </select>
+        </div>
+        <div class="field select-field scene-filter">
+          <span class="field-label">场景</span>
+          <select>
+            <option>全部场景</option>
+            <option>场景A（91-120）</option>
+            <option>场景B（121-150）</option>
+            <option>场景C（151-180）</option>
+            <option>场景D（181-210）</option>
+          </select>
+        </div>
+        <div class="field date-field">
+          <span class="field-label">时间</span>
+          <input type="text" placeholder="2026年04月01日 ~ 2026年04月30日" />
+        </div>
+        <div class="toolbar-buttons">
+          <button class="btn btn-primary">搜索</button>
+          <button class="btn btn-default">重置</button>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn btn-outline" type="button" data-open-blacklist>黑名单</button>
+        <button class="btn btn-outline">节日设置</button>
+        <button class="btn btn-outline">文案托管</button>
+        <button class="btn btn-primary">新增策略</button>
+        <button class="btn btn-outline">导入</button>
+      </div>
+    </header>
+
+    <main class="table-card">
+      <table class="listing-table">
+        <colgroup>
+          <col class="col-name" />
+          <col class="col-scene" />
+          <col class="col-strategy" />
+          <col class="col-execution" />
+          <col class="col-count" />
+          <col class="col-status" />
+          <col class="col-editor" />
+          <col class="col-time" />
+          <col class="col-op" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>策略名称</th>
+            <th>场景</th>
+            <th>运营策略</th>
+            <th>执行情况</th>
+            <th>托管数量</th>
+            <th>状态</th>
+            <th>修改人</th>
+            <th>最后修改时间</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><div class="name-cell"><strong>场景07</strong></div></td>
+            <td><span class="plain-text">场景07（128-210）</span></td>
+            <td><div class="multi-line"><span>策略1：标题、关键词、亮点、广告、价格调整、折扣（4种规则）</span><span>策略2：标题、关键词、亮点、广告、价格调整</span><span>策略3：广告、价格调整、价格折扣、Coupon、节日排除</span><span>策略4：标题、广告、价格折扣、Coupon</span></div></td>
+            <td><div class="metric-cell"><span>总一周：167122</span><span>总二周：52843</span><span>总三周：32954</span><span>总四周：15324</span></div></td>
+            <td><a href="#" class="link-number">1488</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>陆晓</td>
+            <td>2026-04-14 10:34:34</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>场景组A</strong></div></td>
+            <td><span class="plain-text">场景组A（171-182）</span></td>
+            <td><div class="multi-line"><span>策略1：标题、关键词、亮点、广告、价格调整、节日排除</span><span>策略2：广告、价格调整、Coupon（异常店铺不执行）</span><span>策略3：标题、关键词、亮点、广告、价格调整</span></div></td>
+            <td><div class="metric-cell"><span>总一周：12876</span><span>总二周：4735</span><span>总三周：4723</span><span>总四周：4425</span></div></td>
+            <td><a href="#" class="link-number">771</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>沈若微</td>
+            <td>2026-04-14 21:04:09</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>04-S场景1</strong></div></td>
+            <td><span class="plain-text">S场景1</span></td>
+            <td><div class="multi-line"><span>策略1：标题、关键词、亮点、广告、价格调整、Coupon</span><span>策略2：广告、价格调整、价格折扣、节日排除</span><span>策略3：标题、关键词、亮点、广告、价格调整</span></div></td>
+            <td><div class="metric-cell"><span>总一周：143676</span><span>总二周：43845</span><span>总三周：43247</span><span>总四周：17621</span></div></td>
+            <td><a href="#" class="link-number">1775</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>沈鹏</td>
+            <td>2026-04-13 14:45:13</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>vinyl-49</strong></div></td>
+            <td><span class="plain-text">场景组7</span></td>
+            <td><div class="multi-line"><span>策略1：广告、价格调整、价格折扣、Coupon</span><span>策略2：标题、亮点、关键词、广告</span><span>策略3：广告、Coupon、节日排除</span></div></td>
+            <td><div class="metric-cell"><span>总一周：9994</span><span>总二周：2458</span><span>总三周：2416</span><span>总四周：1029</span></div></td>
+            <td><a href="#" class="link-number">1047</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>陈伟</td>
+            <td>2026-04-13 16:26:12</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>场景A1</strong></div></td>
+            <td><span class="plain-text">场景A1（171-178）</span></td>
+            <td><div class="multi-line"><span>策略1：标题、关键词、亮点、广告、价格、Coupon（4周轮巡）</span><span>策略2：广告、价格调整、价格折扣</span><span>策略3：标题、关键词、亮点、广告、价格调整</span><span>策略4：广告、价格调整、Coupon</span></div></td>
+            <td><div class="metric-cell"><span>总一周：44276</span><span>总二周：11276</span><span>总三周：4124</span><span>总四周：1471</span></div></td>
+            <td><a href="#" class="link-number">670</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>程飞</td>
+            <td>2026-04-14 14:21:49</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>AI-campaign</strong></div></td>
+            <td><span class="plain-text">场景1</span></td>
+            <td><div class="multi-line"><span>策略1：标题、关键词、亮点、广告、价格调整、Coupon</span><span>策略2：广告、价格调整、价格折扣、节日排除</span><span>策略3：标题、亮点、广告</span></div></td>
+            <td><div class="metric-cell"><span>总一周：17604</span><span>总二周：4631</span><span>总三周：0</span><span>总四周：0</span></div></td>
+            <td><a href="#" class="link-number">380</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>陈松</td>
+            <td>2026-04-13 19:56:52</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>Q4场景-测试</strong></div></td>
+            <td><span class="plain-text">场景1</span></td>
+            <td><div class="multi-line"><span>策略1：标题、亮点、关键词、广告</span><span>策略2：价格调整、价格折扣、Coupon</span><span>策略3：广告、节日排除、黑名单过滤</span></div></td>
+            <td><div class="metric-cell"><span>总一周：32009</span><span>总二周：104</span><span>总三周：0</span><span>总四周：0</span></div></td>
+            <td><a href="#" class="link-number">548</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>杨磊</td>
+            <td>2026-03-29 19:30:09</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>KOTI-投放23</strong></div></td>
+            <td><span class="plain-text">场景3</span></td>
+            <td><div class="multi-line"><span>策略1：标题、关键词、亮点、广告、价格调整、Coupon（含异常排除）</span><span>策略2：广告、价格调整、价格折扣</span><span>策略3：广告、节日排除</span></div></td>
+            <td><div class="metric-cell"><span>总一周：181023</span><span>总二周：901</span><span>总三周：1</span><span>总四周：1</span></div></td>
+            <td><a href="#" class="link-number">1101</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>杨磊</td>
+            <td>2026-03-13 10:47:46</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>Q4D-场景7</strong></div></td>
+            <td><span class="plain-text">场景1</span></td>
+            <td><div class="multi-line"><span>策略1：广告、标题、亮点、价格调整</span><span>策略2：价格折扣、Coupon、节日排除</span><span>策略3：广告、关键词、黑名单过滤</span></div></td>
+            <td><div class="metric-cell"><span>总一周：25044</span><span>总二周：4817</span><span>总三周：0</span><span>总四周：0</span></div></td>
+            <td><a href="#" class="link-number">757</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>杨磊</td>
+            <td>2026-04-13 09:12:33</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+          <tr>
+            <td><div class="name-cell"><strong>Q7A1-试跑</strong></div></td>
+            <td><span class="plain-text">场景11</span></td>
+            <td><div class="multi-line"><span>策略1：标题、关键词、亮点、广告、价格调整</span><span>策略2：广告、价格折扣、Coupon</span><span>策略3：节日排除、黑名单过滤</span></div></td>
+            <td><div class="metric-cell"><span>总一周：19000</span><span>总二周：8271</span><span>总三周：31</span><span>总四周：12</span></div></td>
+            <td><a href="#" class="link-number">620</a></td>
+            <td><label class="switch"><input type="checkbox" checked /><span class="slider"></span></label></td>
+            <td>江遥</td>
+            <td>2026-04-12 17:06:08</td>
+            <td><a href="#" class="op-link">编辑</a><a href="#" class="op-link">更多</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <footer class="table-footer">
+        <span class="footer-total">共 38 条</span>
+        <span class="page-size">20条/页</span>
+        <div class="pagination">
+          <button class="page-btn">&lt;</button>
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">&gt;</button>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <div class="modal-overlay" data-blacklist-modal hidden>
+    <div class="modal-dialog blacklist-modal" role="dialog" aria-modal="true" aria-labelledby="blacklistModalTitle">
+      <div class="modal-header">
+        <h3 class="modal-title" id="blacklistModalTitle">黑名单</h3>
+        <button class="modal-close" type="button" aria-label="关闭" data-close-blacklist>&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="blacklist-toolbar">
+          <div class="field blacklist-shop-field">
+            <div class="blacklist-shop-dropdown" data-blacklist-shop-dropdown>
+              <button class="blacklist-shop-trigger" type="button" data-blacklist-shop-trigger aria-expanded="false">
+                <span data-blacklist-shop-value>全部店铺</span>
+              </button>
+              <div class="blacklist-shop-panel" data-blacklist-shop-panel hidden>
+                <button class="blacklist-shop-option blacklist-shop-option-all" type="button" data-blacklist-shop-option="全部店铺">
+                  全部店铺
+                </button>
+                <details class="blacklist-shop-group" open>
+                  <summary>US</summary>
+                  <div class="blacklist-shop-group-options">
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01501-US">Amazon-Z01501-US</button>
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01502-US">Amazon-Z01502-US</button>
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01503-US">Amazon-Z01503-US</button>
+                  </div>
+                </details>
+                <details class="blacklist-shop-group">
+                  <summary>CA</summary>
+                  <div class="blacklist-shop-group-options">
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01501-CA">Amazon-Z01501-CA</button>
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01502-CA">Amazon-Z01502-CA</button>
+                  </div>
+                </details>
+                <details class="blacklist-shop-group">
+                  <summary>GB</summary>
+                  <div class="blacklist-shop-group-options">
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01501-GB">Amazon-Z01501-GB</button>
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01502-GB">Amazon-Z01502-GB</button>
+                  </div>
+                </details>
+                <details class="blacklist-shop-group">
+                  <summary>DE</summary>
+                  <div class="blacklist-shop-group-options">
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01501-DE">Amazon-Z01501-DE</button>
+                    <button class="blacklist-shop-option" type="button" data-blacklist-shop-option="Amazon-Z01502-DE">Amazon-Z01502-DE</button>
+                  </div>
+                </details>
+              </div>
+            </div>
+          </div>
+          <div class="toolbar-buttons blacklist-search-buttons">
+            <button class="btn btn-primary" type="button" data-blacklist-search>搜索</button>
+            <button class="btn btn-default" type="button" data-blacklist-reset>重置</button>
+          </div>
+          <div class="toolbar-buttons modal-toolbar-buttons">
+            <button class="btn btn-primary" type="button" data-blacklist-add>添加</button>
+          </div>
+        </div>
+        <div class="blacklist-table-wrap">
+          <table class="listing-table blacklist-table">
+            <colgroup>
+              <col class="blacklist-col-shop" />
+              <col class="blacklist-col-brand" />
+              <col class="blacklist-col-op" />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>店铺</th>
+                <th>品牌</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody data-blacklist-body></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      function setupDropdown(config) {
+        const dropdown = document.querySelector(config.dropdown);
+        if (!dropdown) return null;
+
+        const trigger = dropdown.querySelector(config.trigger);
+        const panel = dropdown.querySelector(config.panel);
+        const value = dropdown.querySelector(config.value);
+        const options = dropdown.querySelectorAll(config.option);
+
+        function closePanel() {
+          panel.hidden = true;
+          trigger.setAttribute("aria-expanded", "false");
+        }
+
+        function openPanel() {
+          panel.hidden = false;
+          trigger.setAttribute("aria-expanded", "true");
+        }
+
+        trigger.addEventListener("click", function () {
+          if (panel.hidden) {
+            openPanel();
+          } else {
+            closePanel();
+          }
+        });
+
+        options.forEach(function (option) {
+          option.addEventListener("click", function () {
+            value.textContent = option.getAttribute(config.optionAttr);
+            closePanel();
+          });
+        });
+
+        return { dropdown: dropdown, closePanel: closePanel };
+      }
+
+      const dropdowns = [];
+
+      document.addEventListener("click", function (event) {
+        dropdowns.forEach(function (item) {
+          if (!item.dropdown.contains(event.target)) {
+            item.closePanel();
+          }
+        });
+      });
+
+      const blacklistModal = document.querySelector("[data-blacklist-modal]");
+      const openBlacklistButton = document.querySelector("[data-open-blacklist]");
+      const closeBlacklistButton = document.querySelector("[data-close-blacklist]");
+      const blacklistBody = document.querySelector("[data-blacklist-body]");
+      const searchButton = document.querySelector("[data-blacklist-search]");
+      const resetButton = document.querySelector("[data-blacklist-reset]");
+      const addButton = document.querySelector("[data-blacklist-add]");
+      const blacklistShopValue = document.querySelector("[data-blacklist-shop-value]");
+
+      let blacklistRows = [
+        { id: 1, shop: "Amazon-Z01501-US", brand: "Brand A" },
+        { id: 2, shop: "Amazon-Z01502-CA", brand: "Brand B" },
+        { id: 3, shop: "Amazon-Z01503-GB", brand: "Brand C" },
+        { id: 4, shop: "Amazon-Z01502-DE", brand: "Brand D" }
+      ];
+
+      function renderBlacklistTable() {
+        if (!blacklistBody) return;
+
+        const selectedShop = blacklistShopValue ? blacklistShopValue.textContent.trim() : "全部店铺";
+        const filteredRows = blacklistRows.filter(function (row) {
+          return selectedShop === "全部店铺" || row.shop === selectedShop;
+        });
+
+        if (!filteredRows.length) {
+          blacklistBody.innerHTML =
+            '<tr><td colspan="3" class="blacklist-empty">暂无黑名单数据</td></tr>';
+          return;
+        }
+
+        blacklistBody.innerHTML = filteredRows
+          .map(function (row) {
+            return (
+              '<tr>' +
+              '<td>' + row.shop + '</td>' +
+              '<td>' + row.brand + '</td>' +
+              '<td>' +
+              '<button class="table-action-btn" type="button" data-blacklist-edit="' + row.id + '">编辑</button>' +
+              '<button class="table-action-btn table-action-danger" type="button" data-blacklist-delete="' + row.id + '">删除</button>' +
+              '</td>' +
+              '</tr>'
+            );
+          })
+          .join("");
+      }
+
+      function openBlacklistModal() {
+        if (!blacklistModal) return;
+        blacklistModal.hidden = false;
+        document.body.classList.add("modal-open");
+        renderBlacklistTable();
+      }
+
+      function closeBlacklistModal() {
+        if (!blacklistModal) return;
+        blacklistModal.hidden = true;
+        document.body.classList.remove("modal-open");
+      }
+
+      if (openBlacklistButton) {
+        openBlacklistButton.addEventListener("click", openBlacklistModal);
+      }
+
+      if (closeBlacklistButton) {
+        closeBlacklistButton.addEventListener("click", closeBlacklistModal);
+      }
+
+      if (blacklistModal) {
+        blacklistModal.addEventListener("click", function (event) {
+          if (event.target === blacklistModal) {
+            closeBlacklistModal();
+          }
+        });
+      }
+
+      if (searchButton) {
+        searchButton.addEventListener("click", renderBlacklistTable);
+      }
+
+      if (resetButton) {
+        resetButton.addEventListener("click", function () {
+          if (blacklistShopValue) blacklistShopValue.textContent = "全部店铺";
+          renderBlacklistTable();
+        });
+      }
+
+      if (addButton) {
+        addButton.addEventListener("click", function () {
+          const shop = window.prompt("请输入店铺", "");
+          if (!shop) return;
+          const brand = window.prompt("请输入品牌", "");
+          if (!brand) return;
+
+          blacklistRows.unshift({
+            id: Date.now(),
+            shop: shop.trim(),
+            brand: brand.trim()
+          });
+          renderBlacklistTable();
+        });
+      }
+
+      if (blacklistBody) {
+        blacklistBody.addEventListener("click", function (event) {
+          const editId = event.target.getAttribute("data-blacklist-edit");
+          const deleteId = event.target.getAttribute("data-blacklist-delete");
+
+          if (editId) {
+            const row = blacklistRows.find(function (item) {
+              return String(item.id) === String(editId);
+            });
+            if (!row) return;
+
+            const nextShop = window.prompt("编辑店铺", row.shop);
+            if (!nextShop) return;
+            const nextBrand = window.prompt("编辑品牌", row.brand);
+            if (!nextBrand) return;
+
+            row.shop = nextShop.trim();
+            row.brand = nextBrand.trim();
+            renderBlacklistTable();
+          }
+
+          if (deleteId) {
+            const confirmed = window.confirm("确认删除该黑名单记录吗？");
+            if (!confirmed) return;
+
+            blacklistRows = blacklistRows.filter(function (item) {
+              return String(item.id) !== String(deleteId);
+            });
+            renderBlacklistTable();
+          }
+        });
+      }
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && blacklistModal && !blacklistModal.hidden) {
+          closeBlacklistModal();
+        }
+      });
+
+      const modalDropdown = setupDropdown({
+        dropdown: "[data-blacklist-shop-dropdown]",
+        trigger: "[data-blacklist-shop-trigger]",
+        panel: "[data-blacklist-shop-panel]",
+        value: "[data-blacklist-shop-value]",
+        option: "[data-blacklist-shop-option]",
+        optionAttr: "data-blacklist-shop-option"
+      });
+
+      if (modalDropdown) {
+        dropdowns.push(modalDropdown);
+      }
+    })();
+  </script>
+</body>
+</html>
