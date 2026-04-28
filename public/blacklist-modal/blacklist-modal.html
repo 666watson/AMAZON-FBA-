@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>添加黑名单 - 模态示例</title>
+  <link rel="stylesheet" href="./blacklist-modal.css" />
+</head>
+<body>
+  <!-- trigger -->
+  <button id="open-add-btn" class="btn">添加</button>
+
+  <div id="blacklist-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="modal-content" role="document" aria-describedby="modal-desc">
+      <header class="modal-header">
+        <h2 id="modal-title">添加黑名单</h2>
+        <button id="modal-close" class="close" aria-label="关闭">&times;</button>
+      </header>
+      <form id="blacklist-form" class="modal-body" novalidate>
+        <div class="form-row">
+          <label for="store-select">店铺设置 <span class="required">*</span></label>
+          <select id="store-select" name="store" required>
+            <option value="">请选择店铺</option>
+            <option value="s1">店铺 A</option>
+            <option value="s2">店铺 B</option>
+            <option value="s3">店铺 C</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label>品牌选择</label>
+          <div id="brands-container" class="brands-container" aria-live="polite">
+            <p class="hint">请选择店铺后自动加载该店铺最近绑定的品牌。</p>
+          </div>
+        </div>
+
+        <footer class="modal-footer">
+          <button type="button" id="cancel-btn" class="btn btn-secondary">取消</button>
+          <button type="submit" id="save-btn" class="btn btn-primary" disabled>保存</button>
+        </footer>
+      </form>
+    </div>
+  </div>
+
+  <script src="./blacklist-modal.js"></script>
+</body>
+</html>
